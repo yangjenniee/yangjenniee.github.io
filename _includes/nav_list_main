@@ -1,0 +1,63 @@
+{% assign sum = site.posts | size %}
+
+<nav class="nav__list">
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">{{ site.data.ui-text[site.locale].menu_label }}</label>
+  <ul class="nav__items" id="category_tag_menu">
+      <li>
+            📂 <span style="font-family:'NanumBarunGothic';">전체 글 수</style> <span style="font-family:'NanumBarunGothic';">{{sum}}</style> <span style="font-family:'NanumBarunGothic';">개</style> 
+      </li>
+      <li>
+        <span class="nav__sub-title">코딩 테스트</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "baekjoon" %}
+                        <li><a href="/categories/baekjoon" class="">백준 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Do it algorithm" %}
+                        <li><a href="/categories/Do-it" class=""> 알고리즘 입문 ({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        <span class="nav__sub-title">Computer Science</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "Design pattern" %}
+                        <li><a href="/categories/design-pattern" class="">디자인 패턴({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+         <span class="nav__sub-title">언어</span>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "java" %}
+                        <li><a href="/categories/java" class="">자바({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "python" %}
+                        <li><a href="/categories/python" class="">파이썬({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>    
+            <ul>
+                {% for category in site.categories %}
+                    {% if category[0] == "javascript" %}
+                        <li><a href="/categories/javascript" class="">자바스크립트({{category[1].size}})</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>  
+
+      </li>
+      <li>	
+            <br>      
+            <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fyangjenniee.github.io&count_bg=%23FFD2E7&title_bg=%23FFF6AD&icon=&icon_color=%23FFF9B1&title=hits&edge_flat=false">
+      </li>
+  </ul>
+</nav>
